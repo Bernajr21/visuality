@@ -14,7 +14,11 @@ public class RegistroController {
             Model model) {
 
         model.addAttribute("nif", nif);
-        model.addAttribute("nombre", nombre);
+        model.addAttribute("nombre", formatoConEspacios(nombre));
         return "registro";
+    }
+
+    public static String formatoConEspacios(String nombreConGuiones) {
+        return nombreConGuiones.replace("_", " ");
     }
 }
